@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <audio
+      src="./musik.mp3",
+      controls=""
+      v-on:play="keadaan = 'Bermain'"
+      v-on:pause="keadaan = 'Berhenti Sejenak'"
+      v-on:ended="keadaan = 'Berhenti'"
+    ></audio>
+    <div>{{ keadaan }}</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        keadaan: 'Berhenti'
+      }
+    })
+  </script>
+</body>
+</html>

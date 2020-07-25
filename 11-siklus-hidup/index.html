@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="angka++">
+      Tingkatkan Angka
+    </button>
+    <p>Angka: {{ angka }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    window.vue = new Vue({
+      el: '#app',
+      data: {
+        angka: 1
+      },
+      beforeCreate() {
+        console.log('Before Create', this.angka)
+      },
+      created() {
+        console.log('Created', this.angka)
+      },
+      beforeMount() {
+        console.log('Before Mount', this.angka)
+      },
+      mounted() {
+        console.log('Mounted', this.angka)
+      },
+      beforeUpdate() {
+        console.log('Before Update', this.angka)
+      },
+      updated() {
+        console.log('Updated', this.angka)
+      },
+      beforeDestroy() {
+        console.log('Before Destroy', this.angka)
+      },
+      destroyed() {
+        console.log('Destroyed', this.angka)
+      }
+    })
+  </script>
+</body>
+</html>

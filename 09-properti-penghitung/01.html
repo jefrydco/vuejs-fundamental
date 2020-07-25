@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <label for="angka1">Angka 1</label>
+    <input
+      type="number"
+      id="angka1"
+      v-model="angka1"
+    >
+    <br>
+    <label for="angka2">Angka 2</label>
+    <input
+      type="number"
+      id="angka2"
+      v-model="angka2"
+    >
+    <p>{{ jumlah }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        angka1: '1',
+        angka2: '2'
+      },
+      computed: {
+        jumlah() {
+          return parseInt(this.angka1) + parseInt(this.angka2)
+        }
+      }
+    })
+  </script>
+</body>
+</html>

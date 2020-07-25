@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <select
+      name="daftarMakanan"
+      id="daftarMakanan"
+      @change="ketikaPeristiwaPerubahan"
+    >
+      <option value="Silahkan Pilih" disabled="" selected="">
+        Silahkan Pilih
+      </option>
+      <option
+        v-for="makanan in daftarMakan"
+        :value="makanan.teks"
+        :key="makanan.id"
+      >
+        {{ makanan.teks }}
+      </option>
+    </select>
+    <p>Makanan Terpelih: {{ makanan }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        makanan: '',
+        daftarMakanan: [
+          { id: 1, teks: 'Indomie Goreng' },
+          { id: 2, teks: 'Salad Buah' },
+          { id: 3, teks: 'Pencel' }
+        ]
+      },
+      methods: {
+        ketikaPeristiwaPerubahan(peristiwa) {
+          this.makan = peristiwa.target.value
+        }
+      }
+    })
+  </script>
+</body>
+</html>
