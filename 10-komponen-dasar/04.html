@@ -7,13 +7,13 @@
 </head>
 <body>
   <div id="app">
-    <komponen-tombol @peristiwaKlik="ketikaKlik" />
+    <komponen-tombol @peristiwa="ketikaKlik" />
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     Vue.component('komponen-tombol', {
       template: `<button
-        @click="$emit('peristiwaKlik', $event)"
+        @click="$emit('peristiwa', $event)"
       >
         Komponen Tombol
       </button>`
